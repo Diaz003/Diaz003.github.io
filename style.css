@@ -292,7 +292,7 @@ a:hover {
   color: var(--green);
 }
 
-/* Tarjetas genéricas */
+/* Tarjetas genéricas (grid por defecto) */
 
 .card-grid {
   max-width: 900px;
@@ -342,19 +342,18 @@ a:hover {
   color: var(--green);
 }
 
-/* ===== SKILLS centradas ===== */
+/* ===== SKILLS: usamos flex para que la 4ª tarjeta quede centrada ===== */
 
 #skills .card-grid {
-  justify-content: center;        /* centra el conjunto de columnas */
+  display: flex;          /* sobrescribe el grid solo en skills */
+  flex-wrap: wrap;
+  justify-content: center; /* centra las filas y la última tarjeta */
+  gap: 20px;
 }
 
 #skills .card {
+  flex: 0 1 230px;        /* ancho base de cada tarjeta */
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 140px;
 }
 
 /* ===== PROYECTOS: botones abajo y centrados + más espacio arriba ===== */
