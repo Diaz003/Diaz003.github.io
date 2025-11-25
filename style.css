@@ -342,15 +342,22 @@ a:hover {
   color: var(--green);
 }
 
-/* Centrar solo las tarjetas de skills */
+/* Centrar TODO el contenido de las skills */
 #skills .card {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
 }
 
-/* Tarjetas de proyectos con botones alineados al fondo */
+/* Tarjetas de proyectos con botones alineados abajo y centrados */
 #projects .card {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
 #projects .card h3 {
@@ -363,7 +370,9 @@ a:hover {
 
 #projects .card .btn-small {
   margin-top: auto;
-  align-self: flex-start; /* usa center si quieres el botón centrado */
+  align-self: center;
+  display: block;
+  width: fit-content;
 }
 
 /* Animación de aparición suave para tarjetas de proyectos */
