@@ -24,9 +24,17 @@ body {
   margin: 0;
   padding: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, #10131a 0, #050608 40%);
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    radial-gradient(circle at top, #10131a 0, #050608 40%);
   color: var(--text);
-  font-size: 16px; /* base más grande */
+  font-size: 16px;
 }
 
 /* Fuente pixel solo para títulos/menú */
@@ -119,6 +127,59 @@ a:hover {
   margin: 0 8px;
 }
 
+/* Hilera de corazones tipo juego */
+
+.heart-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.heart {
+  width: 14px;
+  height: 12px;
+  position: relative;
+  filter: drop-shadow(0 0 4px rgba(255, 0, 0, 0.6));
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 12px;
+  background: #222;
+  border-radius: 4px 4px 0 0;
+}
+
+.heart::before {
+  left: 0;
+}
+
+.heart::after {
+  right: 0;
+}
+
+/* Colores según estado */
+.heart.full::before,
+.heart.full::after {
+  background: var(--red);
+}
+
+.heart.half::before {
+  background: var(--red);
+}
+
+.heart.half::after {
+  background: #222;
+}
+
+.heart.empty::before,
+.heart.empty::after {
+  background: #222;
+}
+
 /* Botones con glow ligero */
 
 .btn {
@@ -178,18 +239,31 @@ a:hover {
   border-bottom: 2px solid var(--border);
 }
 
+/* decorador pixel en títulos de secciones */
 .section h2 {
   max-width: 900px;
   margin: 0 auto 16px;
   font-size: 20px;
   color: var(--red);
+  position: relative;
+  padding-left: 28px;
+}
+
+.section h2::before {
+  content: "▮";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--green);
+  text-shadow: 0 0 6px rgba(0, 255, 136, 0.7);
 }
 
 .section p,
 .section ul {
   max-width: 900px;
   margin: 0 auto 8px;
-  font-size: 16px;       /* <p> más grande */
+  font-size: 16px;
   line-height: 1.9;
 }
 
@@ -221,6 +295,15 @@ a:hover {
   box-shadow: 0 0 0 2px #000;
   transition: transform 0.15s ease-out, box-shadow 0.15s ease-out,
               border-color 0.15s ease-out;
+  position: relative;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(0, 255, 136, 0.08);
+  pointer-events: none;
 }
 
 .card:hover {
@@ -243,19 +326,6 @@ a:hover {
 
 .card .tech {
   color: var(--green);
-}
-
-/* Imágenes de proyectos */
-
-.project-img {
-  width: 100%;
-  display: block;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  border: 1px solid var(--border);
-  object-fit: cover;
-  max-height: 190px;
-  background: #000;
 }
 
 /* Animación de aparición suave para tarjetas de proyectos */
