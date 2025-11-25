@@ -439,48 +439,6 @@ a:hover {
   font-size: 14px;
 }
 
-/* barra de XP */
-.hud-bar {
-  width: 100%;
-  height: 10px;
-  background: #05070a;
-  border: 1px solid var(--border);
-  box-shadow: inset 0 0 5px #000;
-  margin-bottom: 4px;
-}
-
-.hud-bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #00ff88, #9fff3b);
-  box-shadow: 0 0 6px rgba(0, 255, 136, 0.8);
-}
-
-.hud-bar-label {
-  font-size: 11px;
-  color: var(--green);
-}
-
-/* chips de tags */
-.hud-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.hud-tag {
-  font-size: 11px;
-  padding: 3px 8px;
-  border: 1px solid var(--green);
-  color: var(--green);
-  background: #05070a;
-}
-
-.hud-tag-red {
-  border-color: var(--red);
-  color: var(--red);
-}
-
-
 /* Footer */
 
 .footer {
