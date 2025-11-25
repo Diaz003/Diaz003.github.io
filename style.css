@@ -70,9 +70,26 @@ a:hover {
   backdrop-filter: blur(6px);
 }
 
+/* Logo con flicker retro */
 .logo {
   font-size: 18px;
   color: var(--green);
+  text-shadow: 0 0 5px #00ff88, 0 0 11px #00ff88, 0 0 3px #00ff88;
+  animation: flicker 1.7s infinite alternate;
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 6px #00ff88, 0 0 13px #00ff88, 0 0 3px #00ff88;
+  }
+  40% {
+    opacity: 0.92;
+    text-shadow: 0 0 2px #00ff8844, 0 0 5px #00ff8844;
+  }
+  70% {
+    opacity: 0.88;
+  }
 }
 
 .nav a {
@@ -152,24 +169,31 @@ a:hover {
 .heart-char:nth-child(4) { animation-delay: 0.3s; }
 .heart-char:nth-child(5) { animation-delay: 0.4s; }
 
+/* corazón “vacío” pero rojo tenue */
+.heart-fake {
+  opacity: 0.4;
+  filter: grayscale(0.2);
+}
+
 @keyframes heart-bounce {
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(-3px); }
 }
 
-/* Botones con glow ligero */
+/* Botones con glow retro */
 
 .btn {
   display: inline-block;
   padding: 10px 16px;
   border: 2px solid var(--green);
   color: var(--green);
-  background: transparent;
+  background: #0f1e15;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 0 5px #00ff8860;
   transition: background 0.2s ease-out, color 0.2s ease-out,
               box-shadow 0.2s ease-out, transform 0.1s ease-out;
 }
@@ -205,8 +229,21 @@ a:hover {
 }
 
 .btn:hover {
-  box-shadow: 0 0 14px rgba(0, 255, 136, 0.5);
-  transform: translateY(-1px);
+  background: var(--green);
+  color: var(--bg);
+  box-shadow: 0 0 20px #00ff88cc;
+  transform: translateY(-2.5px) scale(1.03);
+}
+
+/* Separador pixel entre secciones */
+
+.pixel-sep {
+  border: none;
+  border-top: 3px solid var(--green);
+  filter: drop-shadow(0 0 6px #00ff88cc);
+  margin: 24px auto 24px;
+  max-width: 228px;
+  height: 0;
 }
 
 /* Secciones */
