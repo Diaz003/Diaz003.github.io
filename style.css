@@ -401,6 +401,86 @@ a:hover {
   animation-fill-mode: both;
 }
 
+/* ===== HUD / Estado del jugador ===== */
+
+.hud-grid {
+  max-width: 900px;
+  margin: 16px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.hud-card {
+  background: #0b1016;
+  border: 2px solid var(--border);
+  box-shadow: 0 0 0 2px #000;
+  padding: 16px;
+  position: relative;
+}
+
+.hud-card::before {
+  content: "▶";
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: var(--green);
+  font-size: 10px;
+}
+
+.hud-card h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: var(--white);
+}
+
+.hud-card p {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+/* barra de XP */
+.hud-bar {
+  width: 100%;
+  height: 10px;
+  background: #05070a;
+  border: 1px solid var(--border);
+  box-shadow: inset 0 0 5px #000;
+  margin-bottom: 4px;
+}
+
+.hud-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00ff88, #9fff3b);
+  box-shadow: 0 0 6px rgba(0, 255, 136, 0.8);
+}
+
+.hud-bar-label {
+  font-size: 11px;
+  color: var(--green);
+}
+
+/* chips de tags */
+.hud-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.hud-tag {
+  font-size: 11px;
+  padding: 3px 8px;
+  border: 1px solid var(--green);
+  color: var(--green);
+  background: #05070a;
+}
+
+.hud-tag-red {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+
 /* Footer */
 
 .footer {
