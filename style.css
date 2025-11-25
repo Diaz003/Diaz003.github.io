@@ -127,57 +127,34 @@ a:hover {
   margin: 0 8px;
 }
 
-/* Hilera de corazones tipo juego */
+/* Hilera de corazones estilo juego (texto) */
 
 .heart-row {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
   margin-top: 24px;
+  text-align: center;
+  font-family: "Press Start 2P", system-ui, sans-serif;
+  font-size: 20px;
+  letter-spacing: 6px;
 }
 
-.heart {
-  width: 14px;
-  height: 12px;
-  position: relative;
-  filter: drop-shadow(0 0 4px rgba(255, 0, 0, 0.6));
+.heart-char {
+  color: var(--red);
+  text-shadow:
+    0 0 4px rgba(255, 0, 0, 0.8),
+    0 0 8px rgba(255, 100, 100, 0.6);
+  display: inline-block;
+  transform: translateY(0);
+  animation: heart-bounce 0.9s ease-in-out infinite;
 }
 
-.heart::before,
-.heart::after {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 12px;
-  background: #222;
-  border-radius: 4px 4px 0 0;
-}
+.heart-char:nth-child(2) { animation-delay: 0.1s; }
+.heart-char:nth-child(3) { animation-delay: 0.2s; }
+.heart-char:nth-child(4) { animation-delay: 0.3s; }
+.heart-char:nth-child(5) { animation-delay: 0.4s; }
 
-.heart::before {
-  left: 0;
-}
-
-.heart::after {
-  right: 0;
-}
-
-/* Colores según estado */
-.heart.full::before,
-.heart.full::after {
-  background: var(--red);
-}
-
-.heart.half::before {
-  background: var(--red);
-}
-
-.heart.half::after {
-  background: #222;
-}
-
-.heart.empty::before,
-.heart.empty::after {
-  background: #222;
+@keyframes heart-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
 }
 
 /* Botones con glow ligero */
