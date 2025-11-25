@@ -342,7 +342,12 @@ a:hover {
   color: var(--green);
 }
 
-/* Centrar TODO el contenido de las skills */
+/* ===== SKILLS centradas ===== */
+
+#skills .card-grid {
+  justify-content: center;        /* centra el conjunto de columnas */
+}
+
 #skills .card {
   text-align: center;
   display: flex;
@@ -352,7 +357,12 @@ a:hover {
   min-height: 140px;
 }
 
-/* Tarjetas de proyectos con botones alineados abajo y centrados */
+/* ===== PROYECTOS: botones abajo y centrados + más espacio arriba ===== */
+
+#projects .card-grid {
+  margin-top: 28px;               /* más espacio entre el título y las cards */
+}
+
 #projects .card {
   display: flex;
   flex-direction: column;
