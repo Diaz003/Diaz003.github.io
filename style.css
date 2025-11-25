@@ -26,9 +26,10 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: radial-gradient(circle at top, #10131a 0, #050608 40%);
   color: var(--text);
+  font-size: 14px;
 }
 
-/* Fuente pixel para títulos/menú */
+/* Fuente pixel solo para títulos/menú */
 h1,
 h2,
 h3,
@@ -62,13 +63,13 @@ a:hover {
 }
 
 .logo {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--green);
 }
 
 .nav a {
   margin-left: 16px;
-  font-size: 10px;
+  font-size: 11px;
   position: relative;
 }
 
@@ -103,14 +104,14 @@ a:hover {
 }
 
 .hero h1 {
-  font-size: 20px;
+  font-size: 26px;
   color: var(--white);
   margin-bottom: 16px;
 }
 
 .hero p {
-  font-size: 12px;
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.7;
   margin-bottom: 24px;
 }
 
@@ -126,12 +127,13 @@ a:hover {
   border: 2px solid var(--green);
   color: var(--green);
   background: transparent;
-  font-size: 10px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   position: relative;
   overflow: hidden;
-  transition: background 0.2s ease-out, color 0.2s ease-out, box-shadow 0.2s ease-out, transform 0.1s ease-out;
+  transition: background 0.2s ease-out, color 0.2s ease-out,
+              box-shadow 0.2s ease-out, transform 0.1s ease-out;
 }
 
 .btn-primary {
@@ -145,7 +147,7 @@ a:hover {
 }
 
 .btn-small {
-  font-size: 9px;
+  font-size: 10px;
   padding: 8px 12px;
 }
 
@@ -179,7 +181,7 @@ a:hover {
 .section h2 {
   max-width: 900px;
   margin: 0 auto 16px;
-  font-size: 14px;
+  font-size: 18px;
   color: var(--red);
 }
 
@@ -187,8 +189,8 @@ a:hover {
 .section ul {
   max-width: 900px;
   margin: 0 auto 8px;
-  font-size: 12px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 /* Listas */
@@ -208,8 +210,8 @@ a:hover {
   max-width: 900px;
   margin: 16px auto 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
 }
 
 .card {
@@ -217,7 +219,8 @@ a:hover {
   border: 2px solid var(--border);
   padding: 16px;
   box-shadow: 0 0 0 2px #000;
-  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out,
+              border-color 0.15s ease-out;
 }
 
 .card:hover {
@@ -227,19 +230,32 @@ a:hover {
 }
 
 .card h3 {
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 0;
   margin-bottom: 10px;
   color: var(--white);
 }
 
 .card p {
-  font-size: 10px;
+  font-size: 12px;
   margin: 4px 0;
 }
 
 .card .tech {
   color: var(--green);
+}
+
+/* Imágenes de proyectos */
+
+.project-img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border);
+  object-fit: cover;
+  max-height: 180px;
+  background: #000;
 }
 
 /* Animación de aparición suave para tarjetas de proyectos */
@@ -264,7 +280,7 @@ a:hover {
 .footer {
   text-align: center;
   padding: 16px 10px 24px;
-  font-size: 10px;
+  font-size: 12px;
   color: #888;
 }
 
