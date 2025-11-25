@@ -292,7 +292,7 @@ a:hover {
   color: var(--green);
 }
 
-/* Tarjetas */
+/* Tarjetas genéricas */
 
 .card-grid {
   max-width: 900px;
@@ -340,6 +340,30 @@ a:hover {
 
 .card .tech {
   color: var(--green);
+}
+
+/* Centrar solo las tarjetas de skills */
+#skills .card {
+  text-align: center;
+}
+
+/* Tarjetas de proyectos con botones alineados al fondo */
+#projects .card {
+  display: flex;
+  flex-direction: column;
+}
+
+#projects .card h3 {
+  margin-bottom: 8px;
+}
+
+#projects .card p {
+  margin-bottom: 6px;
+}
+
+#projects .card .btn-small {
+  margin-top: auto;
+  align-self: flex-start; /* usa center si quieres el botón centrado */
 }
 
 /* Animación de aparición suave para tarjetas de proyectos */
